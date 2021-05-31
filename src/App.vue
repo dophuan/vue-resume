@@ -1,9 +1,19 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div
+    id="app"
+    class="
+      bg-hero-md bg-opacity-100 bg-center bg-fixed bg-no-repeat bg-cover
+      w-screen
+      h-screen
+    "
+  >
+    <div
+      class="
+        w-screen
+        h-screen
+        bg-center bg-fixed bg-no-repeat bg-cover bg-path-md
+      "
+    ></div>
     <router-view />
   </div>
 </template>
