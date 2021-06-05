@@ -13,7 +13,11 @@
         h-screen
         bg-center bg-fixed bg-no-repeat bg-cover bg-path-md
       "
-    ></div>
+    >
+      <component :is="($route.meta && $route.meta.layout) || 'div'">
+        <router-view />
+      </component>
+    </div>
     <router-view />
   </div>
 </template>
