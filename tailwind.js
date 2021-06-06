@@ -8,6 +8,9 @@ module.exports = {
         "hero-xl": "url('~@/assets/images/bg_xlarge.svg')",
         "path-md": "url('~@/assets/images/path_small.svg')",
       }),
+      rotate: {
+        270: "270deg",
+      },
     },
   },
   variants: {
