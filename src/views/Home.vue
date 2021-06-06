@@ -1,13 +1,18 @@
 <template>
   <div class="home some-other-class">
-    <div class="demo-box" id="orange-box">{{ x }}</div>
+    <Introduction />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Introduction from "@/components/Animations/Introduction.vue";
 
-@Component
+@Component({
+  components: {
+    Introduction,
+  },
+})
 export default class Home extends Vue {
   delta: number;
   x: number;
@@ -20,13 +25,17 @@ export default class Home extends Vue {
   }
 
   mounted(): void {
+    let element = document.getElementById("orange-box") as HTMLDivElement;
     document.addEventListener("wheel", (event) => {
+      let width = parseInt(element.style.width);
+      // let height= parseInt(element.style.height);
+
       if (event.deltaY > 0) {
-        this.x = this.x - 10;
+        width = width + 5;
       } else if (event.deltaY < 0) {
-        this.x = this.x + 10;
+        width = width - 5;
       }
-      return 0;
+      element.style.width = `${width}px`;
     });
   }
 }
