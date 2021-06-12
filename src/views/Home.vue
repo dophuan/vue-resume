@@ -1,6 +1,17 @@
 <template>
-  <div class="home h-screen overflow-x-scroll overflow-y-hidden" id="home">
-    <skill-meter :point="point" />
+  <div
+    class="home h-screen overflow-x-scroll overflow-y-hidden flex flex-column"
+    id="home"
+  >
+    <span class="child">
+      <Skills />
+    </span>
+    <span class="child">
+      <Experiences />
+    </span>
+    <span class="child">
+      <Education />
+    </span>
   </div>
 </template>
 
@@ -8,10 +19,16 @@
 import { Component, Vue } from "vue-property-decorator";
 // import Introduction from "@/components/Animations/Introduction.vue";
 import SkillMeter from "@/components/Animations/SkillMeter.vue";
+import Skills from "@/views/Skills.vue";
+import Experiences from "@/views/Experiences.vue";
+import Education from "@/views/Education.vue";
 @Component({
   components: {
     // Introduction,
     SkillMeter,
+    Skills,
+    Experiences,
+    Education,
   },
 })
 export default class Home extends Vue {
@@ -53,5 +70,9 @@ export default class Home extends Vue {
 <style lang="scss" scoped>
 #home {
   width: 4000px;
+  scroll-snap-type: y mandatory;
+  .child {
+    scroll-snap-align: start;
+  }
 }
 </style>

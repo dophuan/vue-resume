@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "@/views/Home.vue";
+import Experiences from "@/views/Experiences.vue";
+import Education from "@/views/Education.vue";
+import Skills from "@/views/Skills.vue";
 import HomeLayout from "@/layouts/HomeLayout.vue";
 
 Vue.use(VueRouter);
@@ -11,6 +14,24 @@ const routes: Array<RouteConfig> = [
     name: "Home",
     meta: { layout: HomeLayout },
     component: Home,
+  },
+  {
+    path: "/experiences",
+    name: "Experiences",
+    // meta: { layout: HomeLayout },
+    component: Experiences,
+  },
+  {
+    path: "/education",
+    name: "Education",
+    // meta: { layout: HomeLayout },
+    component: Education,
+  },
+  {
+    path: "/skills",
+    name: "Skills",
+    // meta: { layout: HomeLayout },
+    component: Skills,
   },
   // {
   //   path: "/about",
