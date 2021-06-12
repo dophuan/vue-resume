@@ -11,6 +11,7 @@
         left-0
         flex
         items-center
+        p-4
         text-center text-base text-gray-400
       "
     >
@@ -59,7 +60,6 @@ $display-text: "Hi, I am Phu An DO, a fullstack overflow developer";
 
 .content {
   --partialString: "Hover over the screen to reveal the text...";
-  padding: 1em;
 }
 
 .text:after {
