@@ -2,26 +2,28 @@
   <div
     class="
       home
-      h-screen
-      overflow-x-scroll overflow-y-hidden
-      flex flex-column
-      md:ml-20
+      w-screen
+      md:h-screen md:w-auto
+      overflow-x-hidden overflow-y-scroll
+      md:overflow-x-scroll md:overflow-y-hidden
+      block
+      md:flex md:flex-column md:ml-20
       ml-0
     "
     id="home"
   >
-    <span class="child">
+    <div class="child">
       <IntroductionPage />
-    </span>
-    <span class="child">
+    </div>
+    <div class="child">
       <Skills />
-    </span>
-    <span class="child">
+    </div>
+    <div class="child">
       <Experiences />
-    </span>
-    <span class="child">
+    </div>
+    <div class="child">
       <Education />
-    </span>
+    </div>
   </div>
 </template>
 
@@ -59,13 +61,15 @@ export default class Home extends Vue {
     document.addEventListener(
       "wheel",
       (event) => {
-        if (event.deltaY < 0) {
-          left = left + 100;
-          element.scrollLeft += 30;
-        } else if (event.deltaY > 0) {
-          element.scrollLeft -= 30;
+        if (window.innerWidth >= 768) {
+          if (event.deltaY < 0) {
+            left = left + 100;
+            element.scrollLeft += 30;
+          } else if (event.deltaY > 0) {
+            element.scrollLeft -= 30;
+          }
+          event.preventDefault();
         }
-        event.preventDefault();
       },
       {
         passive: false,
