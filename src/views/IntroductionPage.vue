@@ -39,8 +39,7 @@
         items-center
         justify-center
         hidden
-        md:flex
-        md:w-2/4
+        md:flex md:w-2/4
       "
     >
       <span>Hình tui</span>
