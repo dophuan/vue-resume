@@ -17,15 +17,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-// import Introduction from "@/components/Animations/Introduction.vue";
-import SkillMeter from "@/components/Animations/SkillMeter.vue";
-import Skills from "@/views/Skills.vue";
-import Experiences from "@/views/Experiences.vue";
-import Education from "@/views/Education.vue";
+import Skills from "@/components/Skills.vue";
+import Experiences from "@/components/Experiences.vue";
+import Education from "@/components/Education.vue";
 @Component({
   components: {
-    // Introduction,
-    SkillMeter,
     Skills,
     Experiences,
     Education,
@@ -69,7 +65,6 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 #home {
-  width: 4000px;
   scroll-snap-type: y mandatory;
   .child {
     scroll-snap-align: start;

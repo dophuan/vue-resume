@@ -1,9 +1,9 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "@/views/Home.vue";
-import Experiences from "@/views/Experiences.vue";
-import Education from "@/views/Education.vue";
-import Skills from "@/views/Skills.vue";
+import Experiences from "@/components/Experiences.vue";
+import Education from "@/components/Education.vue";
+import Skills from "@/components/Skills.vue";
 import HomeLayout from "@/layouts/HomeLayout.vue";
 
 Vue.use(VueRouter);
