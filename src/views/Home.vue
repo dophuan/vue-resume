@@ -1,8 +1,18 @@
 <template>
   <div
-    class="home h-screen overflow-x-scroll overflow-y-hidden flex flex-column"
+    class="
+      home
+      h-screen
+      overflow-x-scroll overflow-y-hidden
+      flex flex-column
+      md:ml-20
+      ml-0
+    "
     id="home"
   >
+    <span class="child">
+      <IntroductionPage />
+    </span>
     <span class="child">
       <Skills />
     </span>
@@ -17,14 +27,16 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Skills from "@/components/Skills.vue";
-import Experiences from "@/components/Experiences.vue";
-import Education from "@/components/Education.vue";
+import Skills from "@/views/Skills.vue";
+import Experiences from "@/views/Experiences.vue";
+import Education from "@/views/Education.vue";
+import IntroductionPage from "@/views/IntroductionPage.vue";
 @Component({
   components: {
     Skills,
     Experiences,
     Education,
+    IntroductionPage,
   },
 })
 export default class Home extends Vue {
