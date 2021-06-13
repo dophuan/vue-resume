@@ -1,23 +1,8 @@
 <template>
-  <div
-    id="app"
-    class="
-      bg-hero-md bg-opacity-100 bg-center bg-fixed bg-no-repeat bg-cover
-      w-screen
-      h-screen
-    "
-  >
-    <div
-      class="
-        w-screen
-        h-screen
-        bg-center bg-fixed bg-no-repeat bg-cover bg-path-md
-      "
-    >
-      <component :is="($route.meta && $route.meta.layout) || 'div'">
-        <router-view />
-      </component>
-    </div>
+  <div id="app">
+    <component :is="($route.meta && $route.meta.layout) || 'div'">
+      <router-view />
+    </component>
   </div>
 </template>
 

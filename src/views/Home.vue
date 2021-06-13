@@ -4,6 +4,9 @@
     id="home"
   >
     <span class="child">
+      <IntroductionPage />
+    </span>
+    <span class="child">
       <Skills />
     </span>
     <span class="child">
@@ -20,11 +23,13 @@ import { Component, Vue } from "vue-property-decorator";
 import Skills from "@/components/Skills.vue";
 import Experiences from "@/components/Experiences.vue";
 import Education from "@/components/Education.vue";
+import IntroductionPage from "@/components/IntroductionPage.vue";
 @Component({
   components: {
     Skills,
     Experiences,
     Education,
+    IntroductionPage,
   },
 })
 export default class Home extends Vue {
