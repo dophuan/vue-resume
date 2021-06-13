@@ -1,6 +1,13 @@
 <template>
   <div
-    class="home h-screen overflow-x-scroll overflow-y-hidden flex flex-column"
+    class="
+      home
+      h-screen
+      overflow-x-scroll overflow-y-hidden
+      flex flex-column
+      md:ml-20
+      ml-0
+    "
     id="home"
   >
     <span class="child">

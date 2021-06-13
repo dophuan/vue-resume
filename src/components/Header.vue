@@ -1,20 +1,24 @@
+/* eslint-disable prettier/prettier */
 <template>
   <div
     class="
-      p-6
-      fixed
-      h-screen
-      w-20
-      border-r border-gray-300f
-      flex flex-col
+      flex
+      md:p-6 md:h-screen md:w-20 md:border-r md:flex-col
+      p-4
+      h-20
+      w-screen
+      border-b border-gray-300f
       items-center
       content-center
       bg-white
+      fixed
     "
   >
-    <h1>An Do</h1>
+    <div>An Do</div>
     <div
       class="
+        hidden
+        md:inline
         absolute
         top-1/2
         left-1/2
@@ -26,8 +30,15 @@
         cursor-pointer
       "
       @click.stop="toggleMenu"
-    ></div>
-    <div class="transform -rotate-90 mt-auto">
+    />
+    <a
+      href="javascript:void(0)"
+      class="ml-auto md:hidden"
+      @click.stop="toggleMenu"
+    >
+      <i class="fa fa-chevron-down"></i>
+    </a>
+    <div class="transform -rotate-90 mt-auto hidden md:inline">
       <span>An Do Copyright</span>
     </div>
   </div>

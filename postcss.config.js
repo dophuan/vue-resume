@@ -1,4 +1,8 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 module.exports = {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  plugins: [require("tailwindcss")("tailwind.js"), require("autoprefixer")()],
+  plugins: [
+    require("postcss-preset-env")({ stage: 0 }),
+    require("tailwindcss")("tailwind.js"),
+    require("autoprefixer")(),
+  ],
 };

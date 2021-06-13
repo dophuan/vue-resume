@@ -5,6 +5,8 @@ import store from "./common/store";
 import VueI18n from "vue-i18n";
 import { messages, defaultLocale } from "@/common/language";
 import "@/assets/scss/style.scss";
+import "@fortawesome/fontawesome-free/js/all.js";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 Vue.config.productionTip = false;
 Vue.use(VueI18n);
