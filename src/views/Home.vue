@@ -52,26 +52,26 @@ export default class Home extends Vue {
     this.point = 50;
   }
 
-  // mounted(): void {
-  //   let element = document.getElementById("innerbox") as HTMLDivElement;
-  //   let left = 0;
+  mounted(): void {
+    let element = document.getElementById("home") as HTMLDivElement;
+    let left = 0;
 
-  //   document.addEventListener(
-  //     "wheel",
-  //     (event) => {
-  //       if (event.deltaY < 0) {
-  //         left = left + 100;
-  //         element.scrollLeft(left);
-  //       } else if (event.deltaY > 0) {
-  //         element.scrollLeft -= 100;
-  //       }
-  //       event.preventDefault();
-  //     },
-  //     {
-  //       passive: false,
-  //     }
-  //   );
-  // }
+    document.addEventListener(
+      "wheel",
+      (event) => {
+        if (event.deltaY < 0) {
+          left = left + 100;
+          element.scrollLeft += 30;
+        } else if (event.deltaY > 0) {
+          element.scrollLeft -= 30;
+        }
+        event.preventDefault();
+      },
+      {
+        passive: false,
+      }
+    );
+  }
 }
 </script>
 
