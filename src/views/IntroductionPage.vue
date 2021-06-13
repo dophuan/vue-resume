@@ -45,19 +45,20 @@
     >
       <span>Hình tui</span>
     </div>
-    <Follower />
+    <!-- <Follower /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Follower from "@/components/Animations/Followers.vue";
+// import Follower from "@/components/Animations/Followers.vue";
 
-@Component({
-  components: {
-    Follower,
-  },
-})
+// @Component({
+//   components: {
+//     Follower,
+//   },
+// })
+@Component
 export default class IntroductionPage extends Vue {}
 </script>
 

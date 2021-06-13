@@ -27,10 +27,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Skills from "@/components/Skills.vue";
-import Experiences from "@/components/Experiences.vue";
-import Education from "@/components/Education.vue";
-import IntroductionPage from "@/components/IntroductionPage.vue";
+import Skills from "@/views/Skills.vue";
+import Experiences from "@/views/Experiences.vue";
+import Education from "@/views/Education.vue";
+import IntroductionPage from "@/views/IntroductionPage.vue";
 @Component({
   components: {
     Skills,
