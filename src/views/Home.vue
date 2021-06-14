@@ -8,6 +8,7 @@
       md:overflow-x-scroll md:overflow-y-hidden
       block
       md:flex md:flex-column md:ml-20
+      bg-hero-md
       ml-0
     "
     id="home"
@@ -16,10 +17,10 @@
       <IntroductionPage />
     </div>
     <div class="child">
-      <Skills />
+      <Experiences />
     </div>
     <div class="child">
-      <Experiences />
+      <Skills />
     </div>
     <div class="child">
       <Education />
@@ -42,31 +43,25 @@ import IntroductionPage from "@/views/IntroductionPage.vue";
   },
 })
 export default class Home extends Vue {
-  delta: number;
-  x: number;
-  y: number;
   point: number;
+  bgClass: string;
   constructor() {
     super();
-    this.delta = 0;
-    this.x = 0;
-    this.y = 0;
     this.point = 50;
+    this.bgClass = "bg-hero-md";
   }
 
   mounted(): void {
     let element = document.getElementById("home") as HTMLDivElement;
-    let left = 0;
-
+    const scrollAmount = 100;
     document.addEventListener(
       "wheel",
       (event) => {
         if (window.innerWidth >= 768) {
           if (event.deltaY < 0) {
-            left = left + 100;
-            element.scrollLeft += 30;
+            element.scrollLeft += scrollAmount;
           } else if (event.deltaY > 0) {
-            element.scrollLeft -= 30;
+            element.scrollLeft -= scrollAmount;
           }
           event.preventDefault();
         }
