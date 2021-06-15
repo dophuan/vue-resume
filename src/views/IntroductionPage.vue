@@ -42,7 +42,30 @@
         md:flex md:w-2/4
       "
     >
-      <span>Hình tui</span>
+      <DonutChart
+        :data="[68, 32]"
+        :colors="['orange', 'white']"
+        :options="{
+          plugins: {
+            tooltip: {
+              enabled: false,
+            },
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
+            hover: {
+              mode: null,
+            },
+          },
+          maintainAspectRatio: false,
+        }"
+        :canvas-width="150"
+        :canvas-height="150"
+        >Test</DonutChart
+      >
     </div>
     <!-- <Follower /> -->
   </div>
@@ -50,14 +73,15 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import DonutChart from "@/components/Animations/Donut.vue";
 // import Follower from "@/components/Animations/Followers.vue";
 
-// @Component({
-//   components: {
-//     Follower,
-//   },
-// })
-@Component
+@Component({
+  components: {
+    DonutChart,
+    // Follower
+  },
+})
 export default class IntroductionPage extends Vue {}
 </script>
 
