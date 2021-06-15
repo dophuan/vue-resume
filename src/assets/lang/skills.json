@@ -1,0 +1,19 @@
+{
+  "developer_skills": {
+    "name": "Developer",
+    "skill_set": [
+      { "name": "CSS/SCSS", "level": "80" },
+      { "name": "HTML5", "level": "78" },
+      { "name": "Javascript", "level": "65" }
+    ],
+    "chart_type": "progress"
+  },
+  "language": {
+    "name": "Language Skills",
+    "skill_set": [
+      { "name": "English", "level": "70" },
+      { "name": "Vietnamese", "level": "100" }
+    ],
+    "chart_type": "donut"
+  }
+}
