@@ -1,5 +1,13 @@
 <template>
-  <div class="grid grid-col-3 grid-row-1 grid-flow-col gap-4 w-full h-auto">
+  <div
+    class="
+      grid grid-rows-2 grid-cols-1
+      md:grid-cols-3 md:grid-rows-1 md:grid-flow-col
+      gap-4
+      w-full
+      h-auto
+    "
+  >
     <div class="col-span-1 border-l-4 border-yellow-500 p-4">
       <h2 class="font-bold text-xl">Delevoper skills</h2>
       <div>Some of my development skills</div>

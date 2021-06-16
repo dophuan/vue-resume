@@ -12,12 +12,7 @@
     >
       <slot />
     </div>
-    <canvas
-      id="doughnut"
-      ref="donut"
-      :width="canvasWidth"
-      :height="canvasHeight"
-    ></canvas>
+    <canvas :id="id" :width="canvasWidth" :height="canvasHeight"></canvas>
   </div>
 </template>
 
@@ -32,6 +27,8 @@ export default class Donut extends Vue {
   @Prop({ default: () => [] }) readonly data!: Array<number>;
   @Prop({ default: 40 }) readonly canvasWidth!: number;
   @Prop({ default: 40 }) readonly canvasHeight!: number;
+  @Prop({ default: "doughnut", type: String, required: true })
+  readonly id!: string;
   @Prop({
     default: () => {
       return Chart.defaults;
@@ -52,7 +49,7 @@ export default class Donut extends Vue {
   }
 
   public createChart(chartData: unknown): void {
-    const canvas = document.getElementById("doughnut") as HTMLCanvasElement;
+    const canvas = document.getElementById(this.id) as HTMLCanvasElement;
     const ctx = canvas.getContext("2d");
     if (ctx) {
       ctx.canvas.width = this.canvasWidth;

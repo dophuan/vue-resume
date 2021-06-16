@@ -3,15 +3,15 @@
     class="
       w-screen
       h-screen
+      grid grid-rows-2 grid-cols-1
+      md:grid-rows-1 md:grid-cols-2
+      gap-4
       flex
-      md:flex-row
-      flex-column
       items-center
-      xl:p-32
       p-16
     "
   >
-    <div class="left-container w-full md:w-2/4">
+    <div class="col-span-1">
       <p>
         {{ $t("introduction.hello") }}
       </p>
@@ -32,45 +32,10 @@
         </a>
       </div>
     </div>
-
-    <div
-      class="
-        right-container
-        items-center
-        justify-center
-        hidden
-        md:flex md:w-2/4
-      "
-    >
-      <DonutChart
-        :data="[68, 32]"
-        :colors="['orange', 'white']"
-        :options="{
-          plugins: {
-            tooltip: {
-              enabled: false,
-            },
-            title: {
-              display: false,
-            },
-            legend: {
-              display: false,
-            },
-            hover: {
-              mode: null,
-            },
-          },
-          maintainAspectRatio: false,
-        }"
-        :canvas-width="150"
-        :canvas-height="150"
-        >Test</DonutChart
-      >
+    <div class="col-span-1">
+      <!-- <ProgressBarGroup /> -->
+      <DonutGroup />
     </div>
-    <div class="absolute bottom-4 left-1/2" style="width: 500px">
-      <ProgressBar :quantity="95" skill="Test" />
-    </div>
-    <!-- <Follower /> -->
   </div>
 </template>
 
@@ -78,12 +43,16 @@
 import { Component, Vue } from "vue-property-decorator";
 import DonutChart from "@/components/Animations/Donut.vue";
 import ProgressBar from "@/components/Animations/ProgressBar.vue";
+import DonutGroup from "@/components/Experiences/DonutGroup.vue";
+import ProgressBarGroup from "@/components/Experiences/ProgressBarGroup.vue";
 // import Follower from "@/components/Animations/Followers.vue";
 
 @Component({
   components: {
     DonutChart,
     ProgressBar,
+    ProgressBarGroup,
+    DonutGroup,
     // Follower
   },
 })
