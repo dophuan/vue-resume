@@ -42,7 +42,33 @@
         md:flex md:w-2/4
       "
     >
-      <span>Hình tui</span>
+      <DonutChart
+        :data="[68, 32]"
+        :colors="['orange', 'white']"
+        :options="{
+          plugins: {
+            tooltip: {
+              enabled: false,
+            },
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
+            hover: {
+              mode: null,
+            },
+          },
+          maintainAspectRatio: false,
+        }"
+        :canvas-width="150"
+        :canvas-height="150"
+        >Test</DonutChart
+      >
+    </div>
+    <div class="absolute bottom-4 left-1/2" style="width: 500px">
+      <ProgressBar :quantity="95" skill="Test" />
     </div>
     <!-- <Follower /> -->
   </div>
@@ -50,14 +76,17 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import DonutChart from "@/components/Animations/Donut.vue";
+import ProgressBar from "@/components/Animations/ProgressBar.vue";
 // import Follower from "@/components/Animations/Followers.vue";
 
-// @Component({
-//   components: {
-//     Follower,
-//   },
-// })
-@Component
+@Component({
+  components: {
+    DonutChart,
+    ProgressBar,
+    // Follower
+  },
+})
 export default class IntroductionPage extends Vue {}
 </script>
 

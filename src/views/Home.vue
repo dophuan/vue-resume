@@ -2,26 +2,29 @@
   <div
     class="
       home
-      h-screen
-      overflow-x-scroll overflow-y-hidden
-      flex flex-column
-      md:ml-20
+      w-screen
+      md:h-screen md:w-auto
+      overflow-x-hidden overflow-y-scroll
+      md:overflow-x-scroll md:overflow-y-hidden
+      block
+      md:flex md:flex-column md:ml-20
+      bg-hero-md
       ml-0
     "
     id="home"
   >
-    <span class="child">
+    <div class="child">
       <IntroductionPage />
-    </span>
-    <span class="child">
-      <Skills />
-    </span>
-    <span class="child">
+    </div>
+    <div class="child">
       <Experiences />
-    </span>
-    <span class="child">
+    </div>
+    <div class="child">
+      <Skills />
+    </div>
+    <div class="child">
       <Education />
-    </span>
+    </div>
   </div>
 </template>
 
@@ -40,38 +43,34 @@ import IntroductionPage from "@/views/IntroductionPage.vue";
   },
 })
 export default class Home extends Vue {
-  delta: number;
-  x: number;
-  y: number;
   point: number;
+  bgClass: string;
   constructor() {
     super();
-    this.delta = 0;
-    this.x = 0;
-    this.y = 0;
     this.point = 50;
+    this.bgClass = "bg-hero-md";
   }
 
-  // mounted(): void {
-  //   let element = document.getElementById("innerbox") as HTMLDivElement;
-  //   let left = 0;
-
-  //   document.addEventListener(
-  //     "wheel",
-  //     (event) => {
-  //       if (event.deltaY < 0) {
-  //         left = left + 100;
-  //         element.scrollLeft(left);
-  //       } else if (event.deltaY > 0) {
-  //         element.scrollLeft -= 100;
-  //       }
-  //       event.preventDefault();
-  //     },
-  //     {
-  //       passive: false,
-  //     }
-  //   );
-  // }
+  mounted(): void {
+    let element = document.getElementById("home") as HTMLDivElement;
+    const scrollAmount = 100;
+    document.addEventListener(
+      "wheel",
+      (event) => {
+        if (window.innerWidth >= 768) {
+          if (event.deltaY < 0) {
+            element.scrollLeft += scrollAmount;
+          } else if (event.deltaY > 0) {
+            element.scrollLeft -= scrollAmount;
+          }
+          event.preventDefault();
+        }
+      },
+      {
+        passive: false,
+      }
+    );
+  }
 }
 </script>
 
